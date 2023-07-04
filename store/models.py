@@ -43,6 +43,12 @@ class Customer (models.Model):
     membership = models.CharField(
         max_length=1, choices=MEMBERSHIP_CHOICES, default=MEBERSHIP_BRONZE)
 
+    class Meta:
+        db_table = 'store_customers'
+        indexes = [
+            models.Index(fields=['last_name', 'first_name'])
+        ]
+
     def __str__(self):
         return self.first_name + " " + self.last_name
 
@@ -73,6 +79,7 @@ class OrderItem(models.Model):
 class Address(models.Model):
     street = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
+    zip = models.CharField(max_length=255)
     customer = models.ForeignKey(
         Customer, on_delete=models.CASCADE)
 
