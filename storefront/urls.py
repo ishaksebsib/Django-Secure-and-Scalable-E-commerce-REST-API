@@ -19,6 +19,10 @@ from django.urls import path, include
 import playground
 import debug_toolbar
 
+admin.site.site_header = "Storefront Admin"
+admin.site.site_title = "Storefront Admin Portal"
+admin.site.index_title = "Welcome to Storefront Researcher Portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("__debug__/", include('debug_toolbar.urls')),
