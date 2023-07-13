@@ -8,6 +8,10 @@ django = "*"
 django-debug-toolbar = "*"
 psycopg2 = "*"
 djangorestframework = "*"
+drf-nested-routers = "*"
+django-filter = "*"
+djangorestframework-simplejwt = "*"
+djoser = "*"
 
 [dev-packages]
 
